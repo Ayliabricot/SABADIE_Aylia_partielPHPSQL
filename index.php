@@ -11,7 +11,8 @@
     echo "<br><h1>Top manga : </h1><ul>";
 
     foreach ($mangas as $manga){
-      echo "<li><a href=https://myanimelist.net/topmanga.php><u>".$manga['titre']."</u></a><p>".$manga['année']."</p></li>";
+      $id=$manga['id'];
+      echo "<li><a href='Views/manga.php?id=$id'><u>".$manga['titre']."</u></a><p>".$manga['année']."</p></li>";
     }
 
     echo "</ul>";
