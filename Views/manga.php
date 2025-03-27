@@ -13,7 +13,7 @@
       $manga=$resultat->fetch();
       echo "<h1>".$manga['titre']."</h1><p>".$manga['nom']." - ".$manga['naissance']."</p><p>".$manga['description']."</p>";
       
-      $resultat = $dbPDO->prepare("SELECT personnages.nom AS nom FROM mangas INNER JOIN personnages ON mangas.id=personnages.manga_id WHERE personnages.manga_id=:id");
+      $resultat = $dbPDO->prepare("SELECT personnages.nom AS nom, personnages.id AS id FROM mangas INNER JOIN personnages ON mangas.id=personnages.manga_id WHERE personnages.manga_id=:id");
       $resultat->execute([
       "id"=>$id
       ]);
@@ -22,7 +22,8 @@
 
       echo "<h2>Personnages : </h2><ul>";
       foreach ($personnages as $personnage){
-        echo "<li><a href=''><u>".$personnage['nom']."</u></a></li>";
+        $idPersonnage=$personnage['id'];
+        echo "<li><a href='personnage.php?id=$idPersonnage'><u>".$personnage['nom']."</u></a></li>";
       }
       echo "</ul>";
       
