@@ -11,7 +11,7 @@
     echo "<br><h1>Top manga : </h1><ul>";
 
     foreach ($mangas as $manga){
-      echo "<li><a href='Views/modif_etudiant.php?id=$id'><u>".$manga['titre']."</u></a><p>".$manga['année']."</p></li>";
+      echo "<li><a href=https://myanimelist.net/topmanga.php><u>".$manga['titre']."</u></a><p>".$manga['année']."</p></li>";
     }
 
     echo "</ul>";
