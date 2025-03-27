@@ -12,9 +12,7 @@
 
       $personnage=$resultat->fetch();
       echo "<h1>".$personnage['nom']."</h1><p>".$personnage['description']."</p>";
-      echo "<a href='../index.php'><u>Retour vers page d'accueil</u></a>";
-    
-      
+      echo "<a href='../index.php'><u>Retour vers page d'accueil</u></a>";  
     }
     else{
       echo "<br>Échec de la recherche : ID invalide.";

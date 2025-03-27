@@ -3,6 +3,7 @@
     
     require_once("Model/pdo.php");
 
+    echo "<a href='Views/addAuthor.php'><br>-> <u>Ajouter un auteur</u></a>";
     $resultat = $dbPDO->prepare("SELECT * FROM mangas ORDER BY année");
     $resultat->execute();
 
@@ -16,6 +17,7 @@
     }
 
     echo "</ul>";
+    
 ?>
 
 <?php $content = ob_get_clean(); ?>
